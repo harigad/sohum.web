@@ -172,6 +172,15 @@ body.is-scrolled #experience {
   opacity: 0.84;
 }
 
+main > section:not(#experience) {
+  transition: filter 0.35s ease, opacity 0.35s ease;
+}
+
+main > section.section-below-blurred:not(#experience) {
+  filter: blur(6px);
+  opacity: 0.72;
+}
+
 .hero::before {
   content: "";
   position: absolute;
