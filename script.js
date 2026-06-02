@@ -43,3 +43,4 @@ if (header && experienceSection) {
   window.addEventListener('scroll', syncHeaderState, { passive: true });
   window.addEventListener('resize', syncHeaderState);
 }
+
