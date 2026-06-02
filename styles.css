@@ -161,6 +161,17 @@ body {
   padding: 2rem 0 3rem;
 }
 
+#experience {
+  position: sticky;
+  top: 0;
+  transition: filter 0.32s ease, opacity 0.32s ease;
+}
+
+body.is-scrolled #experience {
+  filter: blur(6px);
+  opacity: 0.84;
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -658,6 +669,11 @@ h3 {
   .split-section,
   .split-section.reverse {
     grid-template-columns: 1fr;
+  }
+
+  #experience {
+    position: relative;
+    top: auto;
   }
 
   .hero-art {

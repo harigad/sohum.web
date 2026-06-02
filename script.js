@@ -35,8 +35,10 @@ if (header && experienceSection) {
     const sectionBottom = experienceSection.getBoundingClientRect().bottom;
     const headerHeight = header.offsetHeight;
     const isPastExperience = sectionBottom <= headerHeight + 24;
+    const hasScrolled = window.scrollY > 2;
 
     header.classList.toggle('past-experience', isPastExperience);
+    document.body.classList.toggle('is-scrolled', hasScrolled);
   };
 
   syncHeaderState();
