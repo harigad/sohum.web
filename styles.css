@@ -410,7 +410,7 @@ h3 {
 }
 
 .science-bar {
-  margin: 0.4rem auto 0.6rem;
+  margin: 2.4rem auto;
 }
 
 .science-bar-image {
@@ -662,6 +662,56 @@ h3 {
   line-height: 1.38;
 }
 
+.moments {
+  margin: 3rem auto 2.6rem;
+  background: rgba(255, 252, 246, 0.9);
+  border: 1px solid rgba(252, 247, 238, 0.8);
+  border-radius: 1.1rem;
+  padding: 1.6rem 1.2rem;
+}
+
+.moments > h2 {
+  text-align: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1.8rem, 4.6vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0 0 2.2rem;
+}
+
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.moment-card {
+  min-width: 0;
+}
+
+.moment-image {
+  width: 100%;
+  aspect-ratio: 4 / 5.6;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(243, 237, 229, 0.95);
+  box-shadow: 0 12px 24px rgba(75, 55, 35, 0.12);
+  display: block;
+}
+
+.moment-card h3 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.06rem;
+  margin: 0.95rem 0 0.45rem;
+}
+
+.moment-card p {
+  margin: 0;
+  color: #5b5651;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
 .text-link {
   text-decoration: none;
   text-transform: uppercase;
@@ -880,6 +930,11 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .moments-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+
   .how-steps {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -919,6 +974,11 @@ h3 {
 
   .tribe-grid {
     grid-template-columns: 1fr;
+  }
+
+  .moments-grid {
+    grid-template-columns: 1fr;
+    gap: 1.3rem;
   }
 
   .advisors-grid {
