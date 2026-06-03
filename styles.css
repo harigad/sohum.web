@@ -451,6 +451,114 @@ h3 {
   color: var(--text-soft);
 }
 
+#important {
+  background: rgba(255, 252, 246, 0.72);
+  border: 1px solid rgba(252, 247, 238, 0.82);
+  border-radius: 1.1rem;
+  padding: 1.6rem;
+  box-shadow: 0 16px 30px rgba(69, 45, 20, 0.14);
+}
+
+#important h2 {
+  font-size: clamp(3rem, 7.8vw, 5.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  max-width: 8ch;
+  margin-bottom: 1.5rem;
+}
+
+.important-lede {
+  font-size: clamp(1.02rem, 2.1vw, 1.2rem);
+  line-height: 1.55;
+  max-width: 34ch;
+  margin-bottom: 1.8rem;
+}
+
+.important-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.6rem;
+  margin-bottom: 2rem;
+  color: #5f5a55;
+  font-size: 0.95rem;
+}
+
+.important-pricing {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  align-items: end;
+  margin-bottom: 1.8rem;
+}
+
+.important-label {
+  margin: 0 0 0.45rem;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.12rem;
+  color: #5f5a55;
+}
+
+.important-price,
+.important-ship {
+  margin: 0;
+  color: #24211e;
+}
+
+.important-price {
+  font-size: clamp(2.1rem, 5.5vw, 3.45rem);
+  line-height: 0.95;
+}
+
+.important-price-strike {
+  color: #b7afa6;
+  text-decoration: line-through;
+}
+
+.important-ship {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.05;
+}
+
+.important-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.9rem;
+}
+
+.important-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: min(100%, 20rem);
+  padding: 1.05rem 1.5rem;
+  background: #070707;
+  color: #f7f2eb;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.important-meta {
+  display: flex;
+  gap: 1.3rem;
+  flex-wrap: wrap;
+  color: #5f5a55;
+  font-size: 0.95rem;
+}
+
+.important-note {
+  margin: 0;
+  padding: 1.2rem 1.3rem;
+  background: #f7e6d4;
+  border: 1px solid #eed4ba;
+  color: #946d46;
+}
+
 .split-copy ul {
   list-style: none;
   margin: 1.1rem 0 1.5rem;
@@ -473,6 +581,85 @@ h3 {
   height: 0.65rem;
   border: 1.5px solid #c79a63;
   border-radius: 50%;
+}
+
+.how-works {
+  margin: 2.8rem auto 2.3rem;
+  text-align: center;
+  background: rgba(255, 252, 246, 0.9);
+  border: 1px solid rgba(252, 247, 238, 0.8);
+  border-radius: 1.1rem;
+  padding: 1.6rem 1.2rem;
+}
+
+.how-works .eyebrow {
+  margin-bottom: 0.8rem;
+}
+
+.how-works > h2 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1.7rem, 4.2vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0 auto;
+  max-width: 21ch;
+}
+
+.how-steps {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.how-step {
+  padding: 0.2rem 0.5rem;
+}
+
+.how-step-number {
+  width: 3.6rem;
+  height: 3.6rem;
+  margin: 0 auto;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(158, 150, 142, 0.44);
+  display: grid;
+  place-items: center;
+  color: #4a4641;
+  font-size: 1.45rem;
+  font-weight: 300;
+}
+
+.how-step-icon {
+  width: 3.6rem;
+  margin: 2rem auto 1.5rem;
+}
+
+.how-step-icon svg {
+  width: 100%;
+  height: auto;
+  stroke: #5d5954;
+  stroke-width: 1.35;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.how-step:nth-child(2) .how-step-icon svg {
+  stroke: #8b673f;
+}
+
+.how-step h3 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1.08rem, 2.2vw, 1.5rem);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.how-step p {
+  margin: 0;
+  color: #5c5752;
+  font-size: 0.92rem;
+  line-height: 1.38;
 }
 
 .text-link {
@@ -680,11 +867,6 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  #experience {
-    position: relative;
-    top: auto;
-  }
-
   .hero-art {
     order: -1;
     min-height: 22rem;
@@ -696,6 +878,16 @@ h3 {
 
   .tribe-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .how-steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.4rem;
+  }
+
+  .how-step-icon {
+    margin: 1.2rem auto 1rem;
   }
 
   .advisors-grid {
