@@ -885,6 +885,12 @@ h3 {
 }
 
 @media (max-width: 980px) {
+  main > section:not(#experience),
+  main > section.section-below-blurred:not(#experience) {
+    filter: none;
+    opacity: 1;
+  }
+
   .main-nav {
     position: absolute;
     top: calc(100% + 0.3rem);
