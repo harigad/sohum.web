@@ -405,6 +405,14 @@ h3 {
   align-items: center;
 }
 
+#journal {
+  grid-template-columns: 1fr;
+}
+
+#journal #important {
+  width: 100%;
+}
+
 .split-section.reverse {
   grid-template-columns: 1fr 1.15fr;
 }
