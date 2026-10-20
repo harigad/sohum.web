@@ -3,111 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SO HUM | Tribe</title>
+    <title>SO HUM — The Makers</title>
     <meta
       name="description"
-      content="Meet the SO HUM tribe and the teammates behind our sound rituals."
+      content="Meet the small circle of engineers, researchers and designers making SO HUM."
     />
+    <meta name="theme-color" content="#14110e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/home.css" />
   </head>
-  <body class="tribe-page">
-    <div class="page-bg" aria-hidden="true"></div>
-
-        <header class="site-header container">
-      <a href="#" class="logo" aria-label="SO HUM home">SO HUM</a>
-
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-
+  <body>
+    <header class="nav" id="nav">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/#instrument">The Instrument</a>
+        <a href="/#ritual">The Ritual</a>
+        <a href="/#edition">The Edition</a>
+      </nav>
+      <a href="/" class="wordmark" aria-label="SO HUM home">SO&nbsp;HUM</a>
+      <a class="nav-reserve" href="https://book.stripe.com/8x23cwetEdEQ4mKaBl9bO00">Reserve</a>
     </header>
 
-  <section class="hero container reveal" id="experience">
+    <main id="top">
+      <section class="hero hero--page" aria-labelledby="makers-page-title">
         <div class="hero-copy">
-          <p class="eyebrow">Sound Ritual</p>
-          
-          <div class="hero-actions">
-            <a class="btn" href="https://book.stripe.com/8x23cwetEdEQ4mKaBl9bO00">Pre Order Now</a>
-            <p class="ship-note">Ships Spring 2027</p>
-            <div class="price-note" aria-label="Pricing details">
-              <p class="price-original">Original Price: $489.85</p>
-              <p class="price-preorder">Pre Order Price: $398.84</p>
-            </div>
-          </div>
+          <p class="kicker fade">The Makers</p>
+          <h1 id="makers-page-title" class="fade">A small circle.<br /><em>One quiet object.</em></h1>
+          <p class="hero-sub fade">
+            Engineers, researchers, a yoga therapist and a designer, each bringing one part of
+            the instrument into being: its sound, its form, and the stillness it leaves behind.
+          </p>
         </div>
       </section>
 
-    <main class="tribe-main container">
-      <section class="tribe-hero reveal">
-        <p class="eyebrow">The Tribe</p>
-        <p class="lede">
-          A cross-functional team of makers, healers, researchers, and builders united by one mission:
-          bringing restorative sound into everyday life.
-        </p>
+      <section class="roster" aria-label="The SO HUM team">
+        <ul>
+          <li class="reveal">
+            <h2>Hari Gadiraju</h2>
+            <p class="roster-role">Founder &amp; Product Vision</p>
+            <p class="roster-note">Guides the product, the ritual it serves, and the story it tells.</p>
+          </li>
+          <li class="reveal">
+            <h2>Abhishek Gayari</h2>
+            <p class="roster-role">Acoustic Engineering</p>
+            <p class="roster-note">Shapes the tone and resonance, so each note lands deep and even.</p>
+          </li>
+          <li class="reveal">
+            <h2>Jay Duraivelu</h2>
+            <p class="roster-role">Sound Research &amp; Yoga Therapy</p>
+            <p class="roster-note">Brings together ancient practice and modern research on sound and wellbeing.</p>
+          </li>
+          <li class="reveal">
+            <h2>Shalini Sankar</h2>
+            <p class="roster-role">Industrial Design</p>
+            <p class="roster-note">Draws the form language and how the instrument feels in the hand.</p>
+          </li>
+          <li class="reveal">
+            <h2>Hari Mani</h2>
+            <p class="roster-role">Engineering</p>
+            <p class="roster-note">Builds the systems and infrastructure behind the instrument.</p>
+          </li>
+        </ul>
       </section>
 
-      <section class="tribe-grid reveal" aria-label="SO HUM teammates">
-        <article class="teammate-card">
-          <div class="teammate-avatar" aria-hidden="true">HG</div>
-          <h3 class = "name">Hari Gadiraju</h3>
-          <p class="teammate-role">Founder &amp; Product Vision</p>
-          <p>Guides product direction, ritual design, and brand storytelling.</p>
-        </article>
-
-        <article class="teammate-card">
-          <div class="teammate-avatar" aria-hidden="true">AG</div>
-          <h3>Abhishek Gayari</h3>
-          <p class="teammate-role">Acoustic Engineering</p>
-          <p>Designs tone profiles and resonance behavior for deep, balanced sound.</p>
-        </article>
-
-        <article class="teammate-card">
-          <div class="teammate-avatar" aria-hidden="true">JD</div>
-          <h3>Jay Duraivelu</h3>
-          <p class="teammate-role">Sound Research | Yoga Therapist</p>
-          <p>Bridging ancient wisdom and modern research wellness through sound.</p>
-        </article>
-
-        <article class="teammate-card">
-          <div class="teammate-avatar" aria-hidden="true">VG</div>
-          <h3>Shalini Sankar</h3>
-          <p class="teammate-role">Industrial Design</p>
-          <p>Shapes the tactile form language and physical experience of each bowl.</p>
-        </article>
-
-        <article class="teammate-card">
-          <div class="teammate-avatar" aria-hidden="true">HM</div>
-          <h3>Hari Mani</h3>
-          <p class="teammate-role">Engineering</p>
-          <p>System design and infrastructure management.</p>
-        </article>
-
+      <section class="invite" aria-labelledby="invite-title">
+        <figure class="invite-media reveal">
+          <img src="/assets/concept/cradle-day.jpg" alt="The wooden cradle resting on a plain surface, lit softly from beneath" loading="lazy" />
+        </figure>
+        <div class="invite-copy reveal">
+          <p class="kicker">The Founding Edition</p>
+          <h2 id="invite-title">One thousand pieces,<br /><em>made by this circle.</em></h2>
+          <p>Founding price $479. General release $699. Arriving Spring 2027.</p>
+          <a class="reserve" href="/#edition">See the edition</a>
+        </div>
       </section>
-
-   
     </main>
 
-    <footer class="site-footer container">
-      <a href="index.html" class="logo">SO HUM</a>
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="index.html#instrument">The Instrument</a>
-        <a href="tribe.html">Tribe</a>
-        <a href="index.html#edition">Reserve</a>
+    <footer class="foot">
+      <a href="/" class="wordmark">SO&nbsp;HUM</a>
+      <p class="foot-line"><em>I am that.</em></p>
+      <nav aria-label="Footer">
+        <a href="mailto:hello@sohum.studio">hello@sohum.studio</a>
+        <a href="/">Home</a>
+        <a href="/#edition">Reserve</a>
       </nav>
-      <div class="social" aria-label="Social links">
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="YouTube">YT</a>
-        <a href="#" aria-label="Email">EM</a>
-      </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/home.js"></script>
   </body>
 </html>
