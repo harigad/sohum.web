@@ -114,6 +114,14 @@ const load = async () => {
     return;
   }
 
+  // Shared links arrive with the record already embedded by /api/founding-page.
+  const embedded = window.foundingMemberData;
+  if (!sessionId && embedded && memberMatch[1].startsWith(`${embedded.number}-`)) {
+    foundingMember = embedded;
+    render(foundingMember, { isOwner: false });
+    return;
+  }
+
   try {
     const query = sessionId
       ? `session_id=${encodeURIComponent(sessionId)}`
