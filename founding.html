@@ -13,168 +13,172 @@
       property="og:description"
       content="Harish Gadiraju helped bring SoHum into the world - a device for stillness, sound, and presence."
     />
-    <meta property="og:image" content="assets/bg2.jpg" />
+    <meta property="og:image" content="/assets/concept/hero.jpg" />
+    <meta name="theme-color" content="#14110e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/home.css" />
   </head>
-  <body class="founding-member-page">
-    <div class="page-bg" aria-hidden="true"></div>
-
-    <header class="site-header container">
-      <a href="#" class="logo" aria-label="SO HUM home">SO HUM</a>
-
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-
+  <body>
+    <header class="nav" id="nav">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/#instrument">The Instrument</a>
+        <a href="/#ritual">The Ritual</a>
+        <a href="/tribe.html">The Makers</a>
+      </nav>
+      <a href="/" class="wordmark" aria-label="SO HUM home">SO&nbsp;HUM</a>
+      <a class="nav-reserve" href="#certificate-section">Certificate</a>
     </header>
 
-    <section class="hero container reveal" id="experience">
+    <main id="top">
+      <!-- The member -->
+      <section class="hero hero--page member" aria-labelledby="founding-hero-heading">
         <div class="hero-copy">
-          <p class="eyebrow">Sound Ritual</p>
-          
-          <div class="hero-actions">
-            <a class="btn" href="https://book.stripe.com/8x23cwetEdEQ4mKaBl9bO00">Pre Order Now</a>
-            <p class="ship-note">Ships Spring 2027</p>
-            <div class="price-note" aria-label="Pricing details">
-              <p class="price-original">Original Price: $699</p>
-              <p class="price-preorder">Pre Order Price: $479</p>
-            </div>
+          <p class="kicker fade">Founding Member</p>
+          <h1 id="founding-hero-heading" class="fade">
+            <span data-member="displayName">Harish Gadiraju</span>
+            <em>is helping bring SO&nbsp;HUM into the world.</em>
+          </h1>
+          <p class="hero-sub fade">
+            Joined the founding circle on <span data-member="joinedDate">June 5, 2026</span>.
+            Pre-order <span data-member="preorderStatus">Confirmed</span>.
+          </p>
+          <div class="member-actions fade">
+            <button class="reserve" type="button" data-action="share">Share my founding page</button>
+            <button class="text-link" type="button" data-action="view-certificate">View certificate</button>
           </div>
         </div>
+        <p class="member-number fade" aria-label="Founding member number">
+          <span>No.</span><span data-member="id">0007</span>
+        </p>
       </section>
 
-    <main class="founding-main container">
-      <section class="founding-hero-section reveal" aria-labelledby="founding-hero-heading">
-        <div class="hero-ring" aria-hidden="true"></div>
-        <p class="eyebrow">Founding Member of SoHum</p>
-        <h1 id="founding-hero-heading">
-          <span data-member="displayName">Harish Gadiraju</span>
-          <span>is helping bring SoHum into the world.</span>
-        </h1>
-
-        <div class="founding-badge" aria-label="Founding member status">
-          <p>Founding Member #<span data-member="id">0007</span></p>
-          <p>Pre-order confirmed</p>
-        </div>
-        <p class="founding-joined-line">Joined the founding circle on <span data-member="joinedDate">June 5, 2026</span></p>
-        <div class="founding-hero-actions">
-          <button class="btn" type="button" data-action="share">Share My Founding Page</button>
-          <button class="btn founding-btn-secondary" type="button" data-action="view-certificate">View Certificate</button>
-        </div>
-      </section>
-
-      <section class="founding-certificate-wrap reveal" id="certificate-section" aria-labelledby="certificate-title">
-        <h2 id="certificate-title">Your Founding Certificate</h2>
-        <article class="founding-certificate" aria-label="Founding certificate">
-          <p>This certifies that</p>
-          <h3 data-member="displayName">Harish Gadiraju</h3>
-          <p>
-            is one of the first founding members of SoHum - a small group of people helping bring a new kind of
-            sound meditation device into the world.
+      <!-- The certificate -->
+      <section class="certificate-wrap" id="certificate-section" aria-labelledby="certificate-title">
+        <h2 id="certificate-title" class="visually-hidden">Your founding certificate</h2>
+        <article class="certificate reveal" aria-label="Founding certificate">
+          <p class="wordmark certificate-mark">SO&nbsp;HUM</p>
+          <p class="certificate-lead">This certifies that</p>
+          <p class="certificate-name" data-member="displayName">Harish Gadiraju</p>
+          <p class="certificate-body">
+            is Founding Member No.&nbsp;<span data-member="id">0007</span> of SO&nbsp;HUM, one of the
+            first thousand people to help bring a new instrument for stillness into the world.
           </p>
-          <p class="certificate-number">Founding Member #<span data-member="id">0007</span></p>
-          <p class="certificate-signature">SoHum Studio</p>
+          <div class="certificate-foot">
+            <p><span>Joined</span><span data-member="joinedDate">June 5, 2026</span></p>
+            <p><span>Signed</span><em>SO HUM Studio</em></p>
+          </div>
         </article>
-        <div class="founding-actions-inline">
-          <button class="btn" type="button" data-action="share-certificate">Share Certificate</button>
-          <button class="btn founding-btn-secondary" type="button" data-action="download-certificate">Download Certificate</button>
+        <div class="certificate-actions reveal">
+          <button class="text-link" type="button" data-action="share-certificate">Copy certificate link</button>
+          <button class="text-link" type="button" data-action="download-certificate">Download certificate</button>
         </div>
       </section>
 
-      <section class="founding-founder-note reveal" aria-labelledby="founder-note-title">
-        <h2 id="founder-note-title">A note from the founder</h2>
-        <div class="founding-note-card">
-          <p>Thank you for believing in SoHum before the world has seen it.</p>
+      <!-- A note from the founder -->
+      <section class="founder-note reveal" aria-labelledby="founder-note-title">
+        <p class="kicker" id="founder-note-title">A note from the founder</p>
+        <blockquote>
+          <p>Thank you for believing in SO HUM before the world has seen it.</p>
           <p>
-            Your pre-order is more than a purchase. It helps us build the first version of a device designed to bring
-            people back to presence through sound, vibration, and stillness.
+            Your pre-order is more than a purchase. It helps us build the first version of an
+            instrument designed to bring people back to presence through sound, vibration and
+            stillness.
           </p>
           <p>You are part of the beginning.</p>
-          <p class="founder-signature">- Harish</p>
-          <p class="founder-title">Founder, SoHum</p>
-        </div>
+          <footer>Harish <span>Founder, SO HUM</span></footer>
+        </blockquote>
       </section>
 
-      <section class="founding-creation reveal" aria-labelledby="creation-title">
-        <h2 id="creation-title">What you helped bring to life</h2>
-        <div class="creation-grid">
-          <article class="creation-card">
-            <div class="creation-icon" aria-hidden="true">)))</div>
-            <h3>Sound</h3>
-            <p>A singing bowl experience designed for modern spaces.</p>
-          </article>
-          <article class="creation-card">
-            <div class="creation-icon" aria-hidden="true">0</div>
-            <h3>Stillness</h3>
-            <p>A physical ritual that helps people pause.</p>
-          </article>
-          <article class="creation-card">
-            <div class="creation-icon" aria-hidden="true">[]</div>
-            <h3>Presence</h3>
-            <p>A device made for homes, studios, healing rooms, and meditation spaces.</p>
-          </article>
-        </div>
+      <!-- What you helped bring to life -->
+      <section class="helped" aria-labelledby="creation-title">
+        <header class="section-head reveal">
+          <p class="kicker">What you helped bring to life</p>
+          <h2 id="creation-title">Three things,<br /><em>made to disappear.</em></h2>
+        </header>
+        <ul class="helped-grid">
+          <li class="reveal">
+            <img src="/assets/concept/bowl.jpg" alt="Frosted crystal singing bowl resting on a wooden cradle" loading="lazy" />
+            <h3>The Bowl</h3>
+            <p>Frosted quartz crystal that rings with a single, unwavering note.</p>
+          </li>
+          <li class="reveal">
+            <img src="/assets/concept/grain.jpg" alt="Close detail of the wooden cradle's curved edge" loading="lazy" />
+            <h3>The Cradle</h3>
+            <p>Formed layer by layer from fine wood fibre, in the arc of a held breath.</p>
+          </li>
+          <li class="reveal">
+            <img src="/assets/concept/cradle.jpg" alt="The wooden cradle in darkness with a soft light pooling beneath it" loading="lazy" />
+            <h3>The Resonance</h3>
+            <p>Sound carried into the body as vibration, with a low light beneath.</p>
+          </li>
+        </ul>
       </section>
 
-      <section class="founding-status reveal" aria-labelledby="status-title">
-        <h2 id="status-title">Your pre-order status</h2>
-        <article class="status-card">
-          <p><strong>Status:</strong> <span data-member="preorderStatus">Confirmed</span></p>
-          <p><strong>Founding Member Number:</strong> #<span data-member="id">0007</span></p>
-          <p><strong>Estimated Update:</strong> Coming soon</p>
-          <p><strong>Email:</strong> <span data-member="emailMasked">h****@gmail.com</span></p>
-          <div class="founding-actions-inline">
-            <a class="btn" href="/preorder">Manage Pre-order</a>
-            <a class="btn founding-btn-secondary" href="mailto:hello@sohum.studio">Contact SoHum</a>
+      <!-- Status -->
+      <section class="member-status" aria-labelledby="status-title">
+        <div class="member-status-inner reveal">
+          <div>
+            <p class="kicker">Your pre-order</p>
+            <h2 id="status-title">Your piece is<br /><em>being made.</em></h2>
           </div>
-        </article>
-      </section>
-
-      <section class="founding-share reveal" id="share-section" aria-labelledby="share-title">
-        <h2 id="share-title">Share your founding page</h2>
-        <p>Let others know you are helping bring SoHum into the world.</p>
-        <div class="founding-actions-inline">
-          <button class="btn" type="button" data-action="share-linkedin">Share on LinkedIn</button>
-          <button class="btn" type="button" data-action="share-x">Share on X</button>
-          <button class="btn founding-btn-secondary" type="button" data-action="copy-link">Copy Link</button>
+          <div>
+            <dl class="ledger">
+              <div><dt>Status</dt><dd data-member="preorderStatus">Confirmed</dd></div>
+              <div><dt>Member number</dt><dd>No. <span data-member="id">0007</span></dd></div>
+              <div><dt>Arrives</dt><dd>Spring 2027</dd></div>
+              <div><dt>Updates sent to</dt><dd data-member="emailMasked">h****@gmail.com</dd></div>
+            </dl>
+            <p class="member-status-note">
+              Questions about your pre-order? Write to
+              <a href="mailto:hello@sohum.studio">hello@sohum.studio</a>.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section class="founding-wall reveal" aria-labelledby="wall-title">
-        <h2 id="wall-title">The Founding Wall is coming</h2>
-        <p>
-          Once the first 500 founding members join, we will open the public Founding Wall - a shared space honoring
-          the earliest supporters of SoHum.
+      <!-- Share and the wall -->
+      <section class="wall reveal" id="share-section" aria-labelledby="wall-title">
+        <p class="kicker">The Founding Wall</p>
+        <h2 id="wall-title">When the circle is complete,<br /><em>every name goes on the wall.</em></h2>
+        <p class="wall-lede">
+          Once the first thousand founding members join, we will open the Founding Wall, a shared
+          place honouring the earliest supporters of SO&nbsp;HUM.
         </p>
-        <p class="wall-progress-text"><span data-member="wallProgress">7</span> / <span data-member="wallGoal">500</span> founding members</p>
-        <div class="wall-progress" role="progressbar" aria-valuemin="0" aria-valuemax="500" aria-valuenow="7">
-          <span class="wall-progress-fill" style="width: 1.4%"></span>
+        <div class="wall-meter">
+          <p class="wall-progress-text">
+            <span data-member="wallProgress">7</span> of <span data-member="wallGoal">1000</span> founding members
+          </p>
+          <div class="wall-progress" role="progressbar" aria-label="Founding members joined" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="7">
+            <span class="wall-progress-fill" style="width: 0.7%"></span>
+          </div>
         </div>
-        <a class="btn" href="/preorder">Invite someone to join the beginning</a>
+        <div class="wall-share">
+          <span>Share your page</span>
+          <button class="text-link" type="button" data-action="share-linkedin">LinkedIn</button>
+          <button class="text-link" type="button" data-action="share-x">X</button>
+          <button class="text-link" type="button" data-action="copy-link">Copy link</button>
+        </div>
       </section>
     </main>
 
-    <footer class="site-footer container founding-footer">
-      <div>
-        <a href="index.html" class="logo">SO HUM</a>
-        <p>A device for stillness, sound, and presence.</p>
-      </div>
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="mailto:hello@sohum.studio">Contact</a>
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
+    <footer class="foot">
+      <a href="/" class="wordmark">SO&nbsp;HUM</a>
+      <p class="foot-line"><em>I am that.</em></p>
+      <nav aria-label="Footer">
+        <a href="mailto:hello@sohum.studio">hello@sohum.studio</a>
+        <a href="/">Home</a>
+        <a href="/tribe.html">The Makers</a>
       </nav>
     </footer>
 
     <div class="copy-toast" id="copy-toast" role="status" aria-live="polite">Founding page link copied</div>
 
-    <script src="script.js"></script>
+    <script src="/home.js"></script>
+    <script src="/founding.js"></script>
   </body>
 </html>
