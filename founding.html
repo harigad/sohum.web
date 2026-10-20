@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harish Gadiraju is a Founding Member of SoHum</title>
+    <title>A Founding Member of SO HUM</title>
     <meta
       name="description"
-      content="Harish Gadiraju helped bring SoHum into the world"
+      content="One of the first thousand people helping bring SO HUM, an instrument for stillness, into the world."
     />
-    <meta property="og:title" content="Harish Gadiraju is a Founding Member of SoHum" />
+    <meta name="robots" content="noindex" />
+    <meta property="og:title" content="A Founding Member of SO HUM" />
     <meta
       property="og:description"
-      content="Harish Gadiraju helped bring SoHum into the world - a device for stillness, sound, and presence."
+      content="One of the first thousand people helping bring SO HUM, an instrument for stillness, into the world."
     />
-    <meta property="og:image" content="/assets/concept/hero.jpg" />
+    <meta property="og:image" content="https://sohum.studio/assets/concept/hero.jpg" />
     <meta name="theme-color" content="#14110e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +24,7 @@
     />
     <link rel="stylesheet" href="/home.css" />
   </head>
-  <body>
+  <body class="is-loading">
     <header class="nav" id="nav">
       <nav class="nav-links" aria-label="Primary">
         <a href="/#instrument">The Instrument</a>
@@ -40,20 +41,24 @@
         <div class="hero-copy">
           <p class="kicker fade">Founding Member</p>
           <h1 id="founding-hero-heading" class="fade">
-            <span data-member="displayName">Harish Gadiraju</span>
+            <span data-member="displayName">Founding Member</span>
             <em>is helping bring SO&nbsp;HUM into the world.</em>
           </h1>
           <p class="hero-sub fade">
-            Joined the founding circle on <span data-member="joinedDate">June 5, 2026</span>.
-            Pre-order <span data-member="preorderStatus">Confirmed</span>.
+            Joined the founding circle on <span data-member="joinedDate">—</span>.
+            <span data-owner-only>Pre-order <span data-member="preorderStatus">Confirmed</span>.</span>
           </p>
-          <div class="member-actions fade">
+          <div class="member-actions fade" data-owner-only>
             <button class="reserve" type="button" data-action="share">Share my founding page</button>
+            <button class="text-link" type="button" data-action="view-certificate">View certificate</button>
+          </div>
+          <div class="member-actions fade" data-public-only hidden>
+            <a class="reserve" href="/#edition">Reserve your number</a>
             <button class="text-link" type="button" data-action="view-certificate">View certificate</button>
           </div>
         </div>
         <p class="member-number fade" aria-label="Founding member number">
-          <span>No.</span><span data-member="id">0007</span>
+          <span>No.</span><span data-member="id">—</span>
         </p>
       </section>
 
@@ -63,24 +68,24 @@
         <article class="certificate reveal" aria-label="Founding certificate">
           <p class="wordmark certificate-mark">SO&nbsp;HUM</p>
           <p class="certificate-lead">This certifies that</p>
-          <p class="certificate-name" data-member="displayName">Harish Gadiraju</p>
+          <p class="certificate-name" data-member="displayName">Founding Member</p>
           <p class="certificate-body">
-            is Founding Member No.&nbsp;<span data-member="id">0007</span> of SO&nbsp;HUM, one of the
+            is Founding Member No.&nbsp;<span data-member="id">—</span> of SO&nbsp;HUM, one of the
             first thousand people to help bring a new instrument for stillness into the world.
           </p>
           <div class="certificate-foot">
-            <p><span>Joined</span><span data-member="joinedDate">June 5, 2026</span></p>
+            <p><span>Joined</span><span data-member="joinedDate">—</span></p>
             <p><span>Signed</span><em>SO HUM Studio</em></p>
           </div>
         </article>
-        <div class="certificate-actions reveal">
+        <div class="certificate-actions reveal" data-owner-only>
           <button class="text-link" type="button" data-action="share-certificate">Copy certificate link</button>
           <button class="text-link" type="button" data-action="download-certificate">Download certificate</button>
         </div>
       </section>
 
       <!-- A note from the founder -->
-      <section class="founder-note reveal" aria-labelledby="founder-note-title">
+      <section class="founder-note reveal" aria-labelledby="founder-note-title" data-owner-only>
         <p class="kicker" id="founder-note-title">A note from the founder</p>
         <blockquote>
           <p>Thank you for believing in SO HUM before the world has seen it.</p>
@@ -120,7 +125,7 @@
       </section>
 
       <!-- Status -->
-      <section class="member-status" aria-labelledby="status-title">
+      <section class="member-status" aria-labelledby="status-title" data-owner-only>
         <div class="member-status-inner reveal">
           <div>
             <p class="kicker">Your pre-order</p>
@@ -128,10 +133,10 @@
           </div>
           <div>
             <dl class="ledger">
-              <div><dt>Status</dt><dd data-member="preorderStatus">Confirmed</dd></div>
-              <div><dt>Member number</dt><dd>No. <span data-member="id">0007</span></dd></div>
+              <div><dt>Status</dt><dd data-member="preorderStatus">—</dd></div>
+              <div><dt>Member number</dt><dd>No. <span data-member="id">—</span></dd></div>
               <div><dt>Arrives</dt><dd>Spring 2027</dd></div>
-              <div><dt>Updates sent to</dt><dd data-member="emailMasked">h****@gmail.com</dd></div>
+              <div><dt>Updates sent to</dt><dd data-member="emailMasked">—</dd></div>
             </dl>
             <p class="member-status-note">
               Questions about your pre-order? Write to
@@ -151,13 +156,14 @@
         </p>
         <div class="wall-meter">
           <p class="wall-progress-text">
-            <span data-member="wallProgress">7</span> of <span data-member="wallGoal">1000</span> founding members
+            <span data-member="wallProgress">—</span> of <span data-member="wallGoal">1000</span> founding members
           </p>
-          <div class="wall-progress" role="progressbar" aria-label="Founding members joined" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="7">
-            <span class="wall-progress-fill" style="width: 0.7%"></span>
+          <div class="wall-progress" role="progressbar" aria-label="Founding members joined" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="0">
+            <span class="wall-progress-fill" style="width: 0%"></span>
           </div>
         </div>
-        <div class="wall-share">
+        <a class="reserve" href="/#edition" data-public-only hidden>Reserve your number</a>
+        <div class="wall-share" data-owner-only>
           <span>Share your page</span>
           <button class="text-link" type="button" data-action="share-linkedin">LinkedIn</button>
           <button class="text-link" type="button" data-action="share-x">X</button>
@@ -165,6 +171,14 @@
         </div>
       </section>
     </main>
+
+    <section class="member-missing" id="member-missing" aria-labelledby="member-missing-title" hidden>
+      <p class="kicker">Founding Member</p>
+      <h1 id="member-missing-title">This page is<br /><em>still in the making.</em></h1>
+      <p id="member-missing-message">We could not find this founding membership.</p>
+      <p>If you have just reserved yours, write to <a href="mailto:hello@sohum.studio">hello@sohum.studio</a> and we will send your link.</p>
+      <a class="text-link" href="/">Return home</a>
+    </section>
 
     <footer class="foot">
       <a href="/" class="wordmark">SO&nbsp;HUM</a>
