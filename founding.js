@@ -1,80 +1,131 @@
-const pathMatch = window.location.pathname.match(/\/founding\/(\d+)/i);
+// A founding member's page. Purchasers arrive from Stripe with ?session_id=...
+// and see their full page; anyone else arrives through a shared link
+// (/founding/0007-<token>) and sees the public certificate. ?preview shows
+// sample data for design work.
 
-const foundingMember = {
-  id: pathMatch ? pathMatch[1].padStart(4, '0') : '0007',
-  fullName: 'Harish Gadiraju',
-  displayName: 'Harish Gadiraju',
-  joinedDate: 'June 5, 2026',
+const params = new URLSearchParams(window.location.search);
+const sessionId = params.get('session_id');
+const memberMatch = window.location.pathname.match(/\/founding\/(\d{1,4}-[A-Za-z0-9_-]{10})\/?$/);
+
+const sampleMember = {
+  number: '0007',
+  name: 'Harish Gadiraju',
+  joined: '2026-06-05T12:00:00Z',
+  status: 'Confirmed',
   emailMasked: 'h****@gmail.com',
-  preorderStatus: 'Confirmed',
   wallProgress: 7,
   wallGoal: 1000,
-  shareUrl: pathMatch
-    ? `${window.location.origin}/founding/${pathMatch[1].padStart(4, '0')}`
-    : 'https://sohum.studio/founding/0007',
-  displayPreference: 'full_name',
+  shareUrl: 'https://sohum.studio/founding/0007-preview000',
 };
 
-const getPublicDisplayName = (member) => {
-  if (member.displayPreference === 'anonymous') {
-    return `Founding Member #${member.id}`;
+let foundingMember = null;
+
+const formatDate = (iso) =>
+  new Date(iso).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+const fetchMember = async (query, attempt = 1) => {
+  const response = await fetch(`/api/founding?${query}`, { headers: { Accept: 'application/json' } });
+  const body = await response.json().catch(() => ({}));
+
+  // A checkout that has only just completed can take a moment to be listed.
+  if (response.status === 503 && attempt < 4) {
+    await new Promise((resolve) => window.setTimeout(resolve, 2000 * attempt));
+    return fetchMember(query, attempt + 1);
   }
 
-  if (member.displayPreference === 'first_name_last_initial') {
-    const parts = member.fullName.trim().split(/\s+/);
-    if (parts.length === 1) {
-      return parts[0];
+  if (!response.ok) {
+    throw new Error(body.error || 'We could not find this founding membership.');
+  }
+
+  return body;
+};
+
+const render = (member, { isOwner }) => {
+  const values = {
+    displayName: member.name,
+    id: member.number,
+    joinedDate: formatDate(member.joined),
+    preorderStatus: member.status,
+    emailMasked: member.emailMasked,
+    wallProgress: member.wallProgress,
+    wallGoal: member.wallGoal,
+  };
+
+  document.querySelectorAll('[data-member]').forEach((node) => {
+    const value = values[node.getAttribute('data-member')];
+    if (value !== undefined && value !== null && value !== '') {
+      node.textContent = String(value);
     }
+  });
 
-    return `${parts[0]} ${parts[parts.length - 1][0]}.`;
+  document.querySelectorAll('[data-owner-only]').forEach((node) => {
+    node.hidden = !isOwner;
+  });
+  document.querySelectorAll('[data-public-only]').forEach((node) => {
+    node.hidden = isOwner;
+  });
+
+  const pageTitle = `${member.name} is a Founding Member of SO HUM`;
+  document.title = pageTitle;
+  const descriptionTag = document.querySelector('meta[name="description"]');
+  if (descriptionTag) {
+    descriptionTag.setAttribute('content', `${member.name} is helping bring SO HUM into the world.`);
   }
 
-  return member.displayName;
+  const progressBar = document.querySelector('.wall-progress');
+  const progressFill = document.querySelector('.wall-progress-fill');
+  const progressPercentage = Math.min(100, Math.max(0, (member.wallProgress / member.wallGoal) * 100));
+
+  if (progressBar) {
+    progressBar.setAttribute('aria-valuemax', String(member.wallGoal));
+    progressBar.setAttribute('aria-valuenow', String(member.wallProgress));
+  }
+
+  if (progressFill) {
+    progressFill.style.width = `${progressPercentage}%`;
+  }
+
+  document.body.classList.remove('is-loading');
 };
 
-const publicName = getPublicDisplayName(foundingMember);
-const memberBindings = document.querySelectorAll('[data-member]');
+const showMissing = (message) => {
+  const missing = document.querySelector('#member-missing');
+  const missingMessage = document.querySelector('#member-missing-message');
+  document.querySelector('main').hidden = true;
+  document.querySelector('.nav-reserve').hidden = true;
+  if (missingMessage) {
+    missingMessage.textContent = message;
+  }
+  if (missing) {
+    missing.hidden = false;
+  }
+  document.body.classList.remove('is-loading');
+};
 
-memberBindings.forEach((node) => {
-  const key = node.getAttribute('data-member');
-  if (!key) {
+const load = async () => {
+  if (params.has('preview')) {
+    foundingMember = sampleMember;
+    render(foundingMember, { isOwner: params.get('preview') !== 'public' });
     return;
   }
 
-  if (key === 'displayName') {
-    node.textContent = publicName;
+  if (!sessionId && !memberMatch) {
+    window.location.replace('/#edition');
     return;
   }
 
-  const value = foundingMember[key];
-  if (value !== undefined && value !== null) {
-    node.textContent = String(value);
+  try {
+    const query = sessionId
+      ? `session_id=${encodeURIComponent(sessionId)}`
+      : `member=${encodeURIComponent(memberMatch[1])}`;
+    foundingMember = await fetchMember(query);
+    render(foundingMember, { isOwner: Boolean(sessionId) });
+  } catch (error) {
+    showMissing(error.message);
   }
-});
+};
 
-const pageTitle = `${publicName} is a Founding Member of SoHum`;
-document.title = pageTitle;
-const description = `${publicName} helped bring SoHum into the world - a device for stillness, sound, and presence.`;
-const descriptionTag = document.querySelector('meta[name="description"]');
-if (descriptionTag) {
-  descriptionTag.setAttribute('content', description);
-}
-
-const progressBar = document.querySelector('.wall-progress');
-const progressFill = document.querySelector('.wall-progress-fill');
-const progressPercentage = Math.min(
-  100,
-  Math.max(0, (foundingMember.wallProgress / foundingMember.wallGoal) * 100)
-);
-
-if (progressBar) {
-  progressBar.setAttribute('aria-valuemax', String(foundingMember.wallGoal));
-  progressBar.setAttribute('aria-valuenow', String(foundingMember.wallProgress));
-}
-
-if (progressFill) {
-  progressFill.style.width = `${progressPercentage}%`;
-}
+load();
 
 const toast = document.querySelector('#copy-toast');
 let toastTimer;
@@ -115,13 +166,13 @@ const copyLink = async () => {
 };
 
 const shareText =
-  'I\'m proud to be a Founding Member of SoHum - a new sound meditation device designed for stillness, vibration, and presence.';
+  'I\'m a Founding Member of SO HUM, an instrument for stillness: frosted crystal resting in a sculpted cradle of wood.';
 
 const tryNativeShare = async () => {
   if (navigator.share) {
     try {
       await navigator.share({
-        title: pageTitle,
+        title: document.title,
         text: shareText,
         url: foundingMember.shareUrl,
       });
@@ -140,7 +191,7 @@ const openShareWindow = (url) => {
 
 document.addEventListener('click', async (event) => {
   const button = event.target.closest('[data-action]');
-  if (!button) {
+  if (!button || !foundingMember) {
     return;
   }
 
@@ -160,7 +211,6 @@ document.addEventListener('click', async (event) => {
   }
 
   if (action === 'download-certificate') {
-    console.log('Download certificate placeholder');
     showToast('Certificate download coming soon');
     return;
   }

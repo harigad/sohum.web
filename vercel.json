@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/founding", "destination": "/founding.html" },
+    { "source": "/founding/:member", "destination": "/founding.html" }
+  ]
+}
