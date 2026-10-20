@@ -152,7 +152,7 @@ h2 em {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: url("../assets/concept/hero.jpg") 50% 12% / max(100%, 175vh) auto no-repeat;
+  background: url("/assets/concept/hero.jpg") 50% 12% / max(100%, 175vh) auto no-repeat;
   animation: drift 24s var(--ease) both;
 }
 
@@ -662,7 +662,7 @@ h2 em {
   z-index: -1;
   background:
     linear-gradient(90deg, var(--ink) 0%, rgba(20, 17, 14, 0.9) 38%, rgba(20, 17, 14, 0.05) 75%),
-    url("../assets/concept/room.jpg") 60% 50% / cover no-repeat;
+    url("/assets/concept/room.jpg") 60% 50% / cover no-repeat;
 }
 
 .edition-inner {
@@ -878,7 +878,7 @@ h2 em {
   .edition-media {
     background:
       linear-gradient(0deg, var(--ink) 30%, rgba(20, 17, 14, 0.75) 100%),
-      url("../assets/concept/room.jpg") 50% 0 / auto 60% no-repeat;
+      url("/assets/concept/room.jpg") 50% 0 / auto 60% no-repeat;
   }
 
   .foot {
