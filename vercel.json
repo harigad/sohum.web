@@ -1,9 +1,21 @@
 {
   "rewrites": [
-    { "source": "/founding", "destination": "/founding.html" },
-    { "source": "/founding/:member", "destination": "/api/founding-page?member=:member" }
+    {
+      "source": "/founding",
+      "destination": "/founding.html"
+    },
+    {
+      "source": "/studio",
+      "destination": "/studio.html"
+    },
+    {
+      "source": "/founding/:member",
+      "destination": "/api/founding-page?member=:member"
+    }
   ],
   "functions": {
-    "api/founding-page.js": { "includeFiles": "founding.html" }
+    "api/founding-page.js": {
+      "includeFiles": "founding.html"
+    }
   }
 }
