@@ -48,3 +48,57 @@ if (film && listen) {
     }
   }).observe(film);
 }
+
+// Reserving opens a choice between the base and the base with a bowl, then
+// hands over to that option's Stripe Payment Link. An option without a link
+// yet is shown as available soon.
+const CHECKOUT_LINKS = {
+  base: 'https://book.stripe.com/8x23cwetEdEQ4mKaBl9bO00',
+  baseBowl: '',
+};
+
+const chooser = document.querySelector('#chooser');
+
+if (chooser && typeof chooser.showModal === 'function') {
+  const options = chooser.querySelectorAll('input[name="edition"]');
+  const continueButton = chooser.querySelector('#chooser-continue');
+
+  options.forEach((option) => {
+    const isAvailable = Boolean(CHECKOUT_LINKS[option.value]);
+    option.disabled = !isAvailable;
+    option.closest('.chooser-option').querySelector('.chooser-option-soon').hidden = isAvailable;
+  });
+
+  const selectAvailable = () => {
+    const checked = chooser.querySelector('input[name="edition"]:checked');
+    if (!checked || checked.disabled) {
+      const firstAvailable = Array.from(options).find((option) => !option.disabled);
+      if (firstAvailable) {
+        firstAvailable.checked = true;
+      }
+    }
+    continueButton.disabled = !chooser.querySelector('input[name="edition"]:checked:not(:disabled)');
+  };
+
+  document.querySelectorAll('[data-reserve]').forEach((trigger) => {
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      selectAvailable();
+      chooser.showModal();
+    });
+  });
+
+  // A click on the backdrop closes the dialog.
+  chooser.addEventListener('click', (event) => {
+    if (event.target === chooser) {
+      chooser.close();
+    }
+  });
+
+  continueButton.addEventListener('click', () => {
+    const checked = chooser.querySelector('input[name="edition"]:checked:not(:disabled)');
+    if (checked) {
+      window.location.href = CHECKOUT_LINKS[checked.value];
+    }
+  });
+}
