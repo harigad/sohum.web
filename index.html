@@ -3,261 +3,169 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SO HUM — An Instrument for Stillness</title>
+    <title>SO HUM</title>
     <meta
       name="description"
-      content="Frosted crystal resting in a sculpted wooden cradle. The SO HUM Founding Edition — one thousand numbered pieces, arriving Spring 2027."
+      content="SO HUM is an instrument for stillness: a frosted crystal bowl on a sculpted base that carries its sound into the body. From $479. Arrives Spring 2027."
     />
-    <meta name="theme-color" content="#14110e" />
+    <meta property="og:title" content="SO HUM" />
+    <meta property="og:description" content="An instrument for stillness. From $479. Arrives Spring 2027." />
+    <meta property="og:image" content="https://sohum.studio/assets/concept/room.jpg" />
+    <meta name="theme-color" content="#0c0b0a" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/home.css" />
+    <link rel="stylesheet" href="/launch.css" />
   </head>
   <body>
-    <header class="nav" id="nav">
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#instrument">The Instrument</a>
-        <a href="#ritual">The Ritual</a>
-        <a href="#edition">The Edition</a>
+    <header class="bar">
+      <a href="#top" class="bar-mark" aria-label="SO HUM home">SO HUM</a>
+      <nav class="bar-links" aria-label="Primary">
+        <a href="#instrument">Instrument</a>
+        <a href="#sound">Sound</a>
+        <a href="#daily">Every day</a>
       </nav>
-      <a href="#top" class="wordmark" aria-label="SO HUM home">SO&nbsp;HUM</a>
-      <a class="nav-reserve" href="#edition" data-reserve>Reserve</a>
+      <a class="pill pill--small" href="#reserve">Reserve</a>
     </header>
 
     <main id="top">
-      <!-- I. Arrival -->
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-media" aria-hidden="true"></div>
-        <div class="hero-copy">
-          <p class="kicker fade">The Founding Edition &nbsp;·&nbsp; Spring 2027</p>
-          <h1 id="hero-title" class="fade">An instrument<br /><em>for stillness.</em></h1>
-          <p class="hero-sub fade">
-            Frosted crystal, resting in a sculpted cradle of wood.
-            Strike it once, and the room changes.
-          </p>
+      <!-- Hero -->
+      <section class="hero">
+        <p class="eyebrow">Founding Edition</p>
+        <h1>SO HUM</h1>
+        <p class="hero-line">An instrument for stillness.</p>
+        <div class="hero-actions">
+          <a class="pill" href="#reserve">Reserve</a>
+          <button class="link-arrow" type="button" id="watch">Watch the film</button>
         </div>
-        <a class="scroll-cue" href="#meaning" aria-label="Begin">
-          <span>Begin</span>
-          <i aria-hidden="true"></i>
-        </a>
-      </section>
+        <p class="hero-meta">From $479. Arrives Spring 2027.</p>
 
-      <!-- II. The name -->
-      <section class="meaning" id="meaning" aria-labelledby="meaning-title">
-        <div class="breath" aria-hidden="true">
-          <div class="breath-ring"></div>
-          <div class="breath-ring breath-ring--2"></div>
-          <span class="breath-word breath-word--in">so</span>
-          <span class="breath-word breath-word--out">hum</span>
-        </div>
-        <div class="meaning-copy reveal">
-          <p class="kicker">The name</p>
-          <h2 id="meaning-title">
-            <em>So</em> on the inhale.<br /><em>Hum</em> on the exhale.
-          </h2>
-          <p>
-            In Sanskrit, <em>so’ham</em> means <em>I am that.</em> It is the sound the breath
-            makes when no one is listening, the oldest and simplest of mantras.
-          </p>
-          <p>We built an object around it.</p>
-        </div>
-      </section>
-
-      <!-- III. The film -->
-      <section class="film" aria-label="The SO HUM film">
-        <div class="film-frame">
+        <div class="film">
           <video id="film" autoplay muted loop playsinline preload="metadata" poster="/assets/concept/bowl.jpg">
             <source src="/assets/video-1184640254727251.mp4" type="video/mp4" />
           </video>
+          <button class="sound-toggle" id="listen" type="button" aria-pressed="false">
+            <span class="sound-toggle-icon" aria-hidden="true"></span>
+            <span class="sound-toggle-label">Sound on</span>
+          </button>
         </div>
-        <button class="listen" id="listen" type="button" aria-pressed="false">
-          <span class="listen-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-          <span class="listen-label">Listen</span>
-        </button>
       </section>
 
-      <!-- IV. The instrument -->
-      <section class="instrument" id="instrument" aria-labelledby="instrument-title">
-        <header class="section-head reveal">
-          <p class="kicker">The Instrument</p>
-          <h2 id="instrument-title">Three things,<br /><em>made to disappear.</em></h2>
+      <!-- Pillar 1: the hardware -->
+      <section class="pillar pillar--dark" id="instrument" aria-labelledby="instrument-title">
+        <header class="pillar-head">
+          <h2 id="instrument-title">Crystal. Wood.<br />Resonance.</h2>
+          <p>Three parts, and nothing else.</p>
         </header>
 
-        <article class="chapter reveal">
-          <figure class="chapter-media">
-            <img src="/assets/concept/bowl.jpg" alt="Frosted crystal singing bowl resting on a wooden cradle" loading="lazy" />
-          </figure>
-          <div class="chapter-copy">
-            <span class="numeral">I</span>
-            <h3>The Bowl</h3>
-            <p>
-              Frosted quartz crystal that rings with a single, unwavering note.
-              Its tone doesn’t fill the room so much as clear it.
-            </p>
-            <dl class="specs">
-              <div><dt>Material</dt><dd>Quartz crystal</dd></div>
-              <div><dt>Finish</dt><dd>Frosted</dd></div>
-            </dl>
-          </div>
-        </article>
+        <figure class="showcase">
+          <img src="/assets/concept/room.jpg" alt="SO HUM glowing softly in a quiet room: a frosted crystal bowl resting on its wooden base" />
+        </figure>
 
-        <article class="chapter chapter--flip reveal">
-          <figure class="chapter-media">
-            <img src="/assets/concept/grain.jpg" alt="Close detail of the wooden cradle's curved edge" loading="lazy" />
-          </figure>
-          <div class="chapter-copy">
-            <span class="numeral">II</span>
-            <h3>The Cradle</h3>
-            <p>
-              Formed layer by layer from fine wood fibre, so its form could follow
-              the arc of a held breath rather than the limits of a lathe.
-              Warm to the hand, and quietly exact.
-            </p>
-            <dl class="specs">
-              <div><dt>Material</dt><dd>Printed wood</dd></div>
-              <div><dt>Form</dt><dd>Built layer by layer</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="chapter chapter--dark reveal">
-          <figure class="chapter-media">
-            <img src="/assets/concept/cradle.jpg" alt="The wooden cradle in darkness with a soft light pooling beneath it" loading="lazy" />
-          </figure>
-          <div class="chapter-copy">
-            <span class="numeral">III</span>
-            <h3>The Resonance</h3>
-            <p>
-              Hidden within the cradle, a quiet system carries the bowl’s tone into the body as
-              vibration, and lets a low light pool beneath it.
-            </p>
-            <p class="aside">Nothing to see. Everything to feel.</p>
-          </div>
-        </article>
+        <div class="parts">
+          <article class="part">
+            <img src="/assets/concept/bowl.jpg" alt="The frosted crystal bowl resting on the base" loading="lazy" />
+            <h3>The bowl</h3>
+            <p>Frosted quartz crystal that rings with a single, unwavering note.</p>
+          </article>
+          <article class="part">
+            <img src="/assets/concept/grain.jpg" alt="Close detail of the base's curved wooden edge" loading="lazy" />
+            <h3>The base</h3>
+            <p>Formed layer by layer from wood fibre. Rest any crystal bowl on it.</p>
+          </article>
+          <article class="part">
+            <img src="/assets/concept/cradle.jpg" alt="The base in darkness with soft light beneath it" loading="lazy" />
+            <h3>The resonance</h3>
+            <p>A hidden system carries the tone into your body as vibration, with a low light beneath.</p>
+          </article>
+        </div>
       </section>
 
-      <!-- V. The ritual -->
-      <section class="ritual" id="ritual" aria-labelledby="ritual-title">
-        <figure class="ritual-media reveal">
+      <!-- Pillar 2: the philosophy of sound -->
+      <section class="pillar pillar--light" id="sound" aria-labelledby="sound-title">
+        <div class="sound">
+          <div class="breath" aria-hidden="true">
+          <span class="breath-ring"></span>
+          <span class="breath-word breath-word--in">so</span>
+          <span class="breath-word breath-word--out">hum</span>
+        </div>
+        <div class="sound-copy">
+          <h2 id="sound-title">So on the inhale.<br />Hum on the exhale.</h2>
+          <p>
+            <em>So’ham</em> is Sanskrit for “I am that.” It is the sound your breath already makes.
+            SO HUM gives it a note to follow, and the room follows with you.
+          </p>
+          <p class="sound-cue">Breathe with the ring: in for four, out for six.</p>
+        </div>
+        </div>
+      </section>
+
+      <!-- Pillar 3: how it fits the day -->
+      <section class="pillar pillar--dark" id="daily" aria-labelledby="daily-title">
+        <header class="pillar-head">
+          <h2 id="daily-title">A minute, any time<br />of day.</h2>
+          <p>Strike once. Breathe until the note fades.</p>
+        </header>
+
+        <figure class="showcase showcase--wide">
           <img src="/assets/concept/sanctuary.jpg" alt="A woman sits in meditation beside SO HUM in a calm, sunlit room" loading="lazy" />
         </figure>
-        <header class="section-head reveal">
-          <p class="kicker">The Ritual</p>
-          <h2 id="ritual-title">A day,<br /><em>held in three tones.</em></h2>
-        </header>
-        <ol class="hours">
-          <li class="reveal">
-            <span class="hour">Dawn</span>
-            <h3>Begin</h3>
-            <p>Before the phone, before the news. One strike, ten breaths, and the day starts on your terms.</p>
+
+        <ol class="moments">
+          <li>
+            <h3>Morning</h3>
+            <p>Before the phone. Before the news. Start the day on one clear note.</p>
           </li>
-          <li class="reveal">
-            <span class="hour">Dusk</span>
-            <h3>Return</h3>
-            <p>A threshold between work and home. Let the tone carry the day out of your shoulders.</p>
+          <li>
+            <h3>Evening</h3>
+            <p>Between work and home. Let the tone carry the day off your shoulders.</p>
           </li>
-          <li class="reveal">
-            <span class="hour">Night</span>
-            <h3>Rest</h3>
-            <p>Lights low, the cradle glowing. A slow descent into the quiet that comes before sleep.</p>
+          <li>
+            <h3>Night</h3>
+            <p>Lights low, the base glowing. Wind down into the quiet before sleep.</p>
           </li>
         </ol>
       </section>
 
-      <!-- VI. A word from the maker -->
-      <section class="letter reveal" aria-label="A note from the founder">
-        <blockquote>
-          <p>
-            “We didn’t set out to make another device. We set out to make the quietest object
-            in your home, and the one you’d reach for first.”
-          </p>
-          <footer>Hari Gadiraju <span>Founder, SO HUM</span></footer>
-        </blockquote>
-      </section>
+      <!-- Reserve -->
+      <section class="pillar pillar--light reserve" id="reserve" aria-labelledby="reserve-title">
+        <header class="pillar-head">
+          <h2 id="reserve-title">Choose your SO HUM.</h2>
+          <p>Founding Edition. Numbered 0001–1000. Arrives Spring 2027.</p>
+        </header>
 
-      <!-- VII. The edition -->
-      <section class="edition" id="edition" aria-labelledby="edition-title">
-        <div class="edition-media" aria-hidden="true"></div>
-        <div class="edition-inner">
-          <header class="reveal">
-            <p class="kicker">The Founding Edition</p>
-            <h2 id="edition-title">One thousand pieces.<br /><em>Each one numbered.</em></h2>
-            <p class="edition-lede">
-              The first SO HUM instruments are reserved for the people who believed in them first.
-              Your number is engraved beneath the cradle and remains yours.
-            </p>
-          </header>
-
-          <dl class="ledger reveal">
-            <div><dt>Edition</dt><dd>Founding, 0001–1000</dd></div>
-            <div><dt>Includes</dt><dd>Wooden base, with or without a crystal bowl</dd></div>
-            <div><dt>Arrives</dt><dd>Spring 2027</dd></div>
-            <div><dt>Founding price</dt><dd>$479 <small>The base. With a SO HUM bowl, $778.</small></dd></div>
-          </dl>
-
-          <div class="edition-cta reveal">
-            <a class="reserve" href="https://book.stripe.com/8x23cwetEdEQ4mKaBl9bO00" data-reserve>Reserve your number</a>
-            <p class="edition-note">Secure checkout by Stripe. We will write to you as your piece is made.</p>
-          </div>
+        <div class="options">
+          <article class="option">
+            <img src="/assets/concept/bowl.jpg" alt="The frosted crystal bowl resting on the base" loading="lazy" />
+            <h3>Base &amp; Bowl</h3>
+            <p>The base with a SO HUM frosted crystal bowl. Ready from the first strike.</p>
+            <p class="option-price">$778</p>
+            <a class="pill" href="#reserve" data-checkout="baseBowl">Reserve</a>
+            <p class="option-soon" hidden>Available soon</p>
+          </article>
+          <article class="option">
+            <img src="/assets/concept/cradle-day.jpg" alt="The wooden base on its own, lit softly from beneath" loading="lazy" />
+            <h3>Base</h3>
+            <p>The base and its resonance system. Use the crystal bowl you already own.</p>
+            <p class="option-price">$479</p>
+            <a class="pill" href="https://book.stripe.com/8x23cwetEdEQ4mKaBl9bO00" data-checkout="base">Reserve</a>
+            <p class="option-soon" hidden>Available soon</p>
+          </article>
         </div>
-      </section>
 
-      <!-- VIII. The makers -->
-      <section class="makers reveal" aria-labelledby="makers-title">
-        <p class="kicker">The Makers</p>
-        <h2 id="makers-title">Made by a small circle of acoustic engineers, sound researchers, a yoga therapist and an industrial designer.</h2>
-        <a class="text-link" href="/tribe.html">Meet the circle</a>
+        <p class="reserve-note">Secure checkout by Stripe. Questions? <a href="mailto:hello@sohum.studio">hello@sohum.studio</a></p>
       </section>
     </main>
 
     <footer class="foot">
-      <a href="#top" class="wordmark">SO&nbsp;HUM</a>
-      <p class="foot-line"><em>I am that.</em></p>
-      <nav aria-label="Footer">
-        <a href="mailto:hello@sohum.studio">hello@sohum.studio</a>
-        <a href="/tribe.html">The Makers</a>
-        <a href="#edition">Reserve</a>
-      </nav>
+      <span class="bar-mark">SO HUM</span>
+      <a href="mailto:hello@sohum.studio">hello@sohum.studio</a>
+      <span>© 2026 SO HUM</span>
     </footer>
 
-    <dialog class="chooser" id="chooser" aria-labelledby="chooser-title">
-      <form method="dialog" class="chooser-inner">
-        <button class="chooser-close" type="submit" value="cancel" aria-label="Close">&times;</button>
-        <p class="kicker">The Founding Edition</p>
-        <h2 id="chooser-title">Choose <em>your instrument.</em></h2>
-
-        <fieldset class="chooser-options">
-          <legend class="visually-hidden">Choose what to reserve</legend>
-          <label class="chooser-option">
-            <input type="radio" name="edition" value="baseBowl" checked />
-            <span class="chooser-option-body">
-              <span class="chooser-option-name">The Base &amp; Bowl</span>
-              <span class="chooser-option-note">The sculpted base with a SO HUM frosted crystal bowl, ready from the first strike.</span>
-              <span class="chooser-option-soon" hidden>Available soon</span>
-            </span>
-            <span class="chooser-option-price">$778</span>
-          </label>
-          <label class="chooser-option">
-            <input type="radio" name="edition" value="base" />
-            <span class="chooser-option-body">
-              <span class="chooser-option-name">The Base</span>
-              <span class="chooser-option-note">The sculpted base and its hidden resonance system. Rest any crystal bowl on it, including one you already own.</span>
-              <span class="chooser-option-soon" hidden>Available soon</span>
-            </span>
-            <span class="chooser-option-price">$479</span>
-          </label>
-        </fieldset>
-
-        <p class="chooser-note">Founding price. Numbered 0001–1000. Arrives Spring 2027.</p>
-        <button class="reserve chooser-continue" type="button" id="chooser-continue">Continue to checkout</button>
-        <p class="edition-note">Secure checkout by Stripe.</p>
-      </form>
-    </dialog>
-
-    <script src="/home.js"></script>
+    <script src="/launch.js"></script>
   </body>
 </html>

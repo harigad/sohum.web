@@ -110,7 +110,7 @@ const load = async () => {
   }
 
   if (!sessionId && !memberMatch) {
-    window.location.replace('/#edition');
+    window.location.replace('/#reserve');
     return;
   }
 

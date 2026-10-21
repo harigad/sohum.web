@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/tribe.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tribe",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/founding",
