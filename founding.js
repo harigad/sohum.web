@@ -9,10 +9,10 @@ const memberMatch = window.location.pathname.match(/\/founding\/(\d{1,4}-[A-Za-z
 
 const sampleMember = {
   number: '0007',
-  name: 'Harish Gadiraju',
+  name: 'Your Name',
   joined: '2026-06-05T12:00:00Z',
   status: 'Confirmed',
-  emailMasked: 'h****@gmail.com',
+  emailMasked: 'y****@example.com',
   wallProgress: 7,
   wallGoal: 1000,
   shareUrl: 'https://sohum.studio/founding/0007-preview000',

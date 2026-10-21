@@ -1235,6 +1235,11 @@ button.text-link {
   padding: clamp(6rem, 14vh, 9rem) var(--gutter);
 }
 
+/* Follows the certificate on the same background, so one gap is enough. */
+.certificate-wrap + .helped {
+  padding-top: 0;
+}
+
 .helped .kicker {
   color: var(--umber);
 }
