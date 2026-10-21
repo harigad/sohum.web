@@ -25,7 +25,7 @@
         <a href="#edition">The Edition</a>
       </nav>
       <a href="#top" class="wordmark" aria-label="SO HUM home">SO&nbsp;HUM</a>
-      <a class="nav-reserve" href="https://book.stripe.com/8x23cwetEdEQ4mKaBl9bO00">Reserve</a>
+      <a class="nav-reserve" href="#edition" data-reserve>Reserve</a>
     </header>
 
     <main id="top">
@@ -194,13 +194,13 @@
 
           <dl class="ledger reveal">
             <div><dt>Edition</dt><dd>Founding, 0001–1000</dd></div>
-            <div><dt>Includes</dt><dd>Crystal bowl &amp; wooden cradle</dd></div>
+            <div><dt>Includes</dt><dd>Wooden base, with or without a crystal bowl</dd></div>
             <div><dt>Arrives</dt><dd>Spring 2027</dd></div>
-            <div><dt>Founding price</dt><dd>$479 <small>General release $699</small></dd></div>
+            <div><dt>Founding price</dt><dd>$479 <small>The base. With a SO HUM bowl, $778.</small></dd></div>
           </dl>
 
           <div class="edition-cta reveal">
-            <a class="reserve" href="https://book.stripe.com/8x23cwetEdEQ4mKaBl9bO00">Reserve your number</a>
+            <a class="reserve" href="https://book.stripe.com/8x23cwetEdEQ4mKaBl9bO00" data-reserve>Reserve your number</a>
             <p class="edition-note">Secure checkout by Stripe. We will write to you as your piece is made.</p>
           </div>
         </div>
@@ -223,6 +223,40 @@
         <a href="#edition">Reserve</a>
       </nav>
     </footer>
+
+    <dialog class="chooser" id="chooser" aria-labelledby="chooser-title">
+      <form method="dialog" class="chooser-inner">
+        <button class="chooser-close" type="submit" value="cancel" aria-label="Close">&times;</button>
+        <p class="kicker">The Founding Edition</p>
+        <h2 id="chooser-title">Choose <em>your instrument.</em></h2>
+
+        <fieldset class="chooser-options">
+          <legend class="visually-hidden">Choose what to reserve</legend>
+          <label class="chooser-option">
+            <input type="radio" name="edition" value="baseBowl" checked />
+            <span class="chooser-option-body">
+              <span class="chooser-option-name">The Base &amp; Bowl</span>
+              <span class="chooser-option-note">The sculpted base with a SO HUM frosted crystal bowl, ready from the first strike.</span>
+              <span class="chooser-option-soon" hidden>Available soon</span>
+            </span>
+            <span class="chooser-option-price">$778</span>
+          </label>
+          <label class="chooser-option">
+            <input type="radio" name="edition" value="base" />
+            <span class="chooser-option-body">
+              <span class="chooser-option-name">The Base</span>
+              <span class="chooser-option-note">The sculpted base and its hidden resonance system. Rest any crystal bowl on it, including one you already own.</span>
+              <span class="chooser-option-soon" hidden>Available soon</span>
+            </span>
+            <span class="chooser-option-price">$479</span>
+          </label>
+        </fieldset>
+
+        <p class="chooser-note">Founding price. Numbered 0001–1000. Arrives Spring 2027.</p>
+        <button class="reserve chooser-continue" type="button" id="chooser-continue">Continue to checkout</button>
+        <p class="edition-note">Secure checkout by Stripe.</p>
+      </form>
+    </dialog>
 
     <script src="/home.js"></script>
   </body>

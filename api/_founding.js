@@ -7,7 +7,8 @@
 //
 // Environment:
 //   STRIPE_SECRET_KEY        Restricted key with read access to Checkout Sessions.
-//   STRIPE_PAYMENT_LINK_ID   The founding Payment Link (plink_...).
+//   STRIPE_PAYMENT_LINK_ID   The founding Payment Links (plink_...), comma-separated:
+//                            one for the base, one for the base and bowl.
 //   FOUNDING_LINK_SECRET     Random string used to sign shareable links.
 
 const crypto = require('crypto');
@@ -36,22 +37,34 @@ const isPaid = (session) =>
   session.status === 'complete' &&
   (session.payment_status === 'paid' || session.payment_status === 'no_payment_required');
 
-// All completed sessions on the founding link, oldest first.
+const foundingLinkIds = () =>
+  (process.env.STRIPE_PAYMENT_LINK_ID || '')
+    .split(',')
+    .map((id) => id.trim())
+    .filter(Boolean);
+
+const isFoundingLink = (paymentLinkId) => foundingLinkIds().includes(paymentLinkId);
+
+// All completed sessions across the founding links, oldest first. Members are
+// numbered in one sequence whichever option they bought.
 const listFoundingSessions = async () => {
   const sessions = [];
-  let startingAfter = '';
 
-  for (;;) {
-    const page = await stripeGet(
-      `/checkout/sessions?payment_link=${encodeURIComponent(process.env.STRIPE_PAYMENT_LINK_ID)}` +
-        `&status=complete&limit=100${startingAfter ? `&starting_after=${startingAfter}` : ''}`
-    );
-    sessions.push(...page.data);
+  for (const linkId of foundingLinkIds()) {
+    let startingAfter = '';
 
-    if (!page.has_more || page.data.length === 0) {
-      break;
+    for (;;) {
+      const page = await stripeGet(
+        `/checkout/sessions?payment_link=${encodeURIComponent(linkId)}` +
+          `&status=complete&limit=100${startingAfter ? `&starting_after=${startingAfter}` : ''}`
+      );
+      sessions.push(...page.data);
+
+      if (!page.has_more || page.data.length === 0) {
+        break;
+      }
+      startingAfter = page.data[page.data.length - 1].id;
     }
-    startingAfter = page.data[page.data.length - 1].id;
   }
 
   return sessions
@@ -100,7 +113,7 @@ const describeMember = (session, sessions, { includePrivate }) => {
 const isConfigured = () =>
   Boolean(
     process.env.STRIPE_SECRET_KEY &&
-      process.env.STRIPE_PAYMENT_LINK_ID &&
+      foundingLinkIds().length > 0 &&
       process.env.FOUNDING_LINK_SECRET
   );
 
@@ -127,6 +140,7 @@ module.exports = {
   describeMember,
   findPublicMember,
   isConfigured,
+  isFoundingLink,
   isPaid,
   listFoundingSessions,
   stripeGet,

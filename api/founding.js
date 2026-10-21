@@ -9,6 +9,7 @@ const {
   describeMember,
   findPublicMember,
   isConfigured,
+  isFoundingLink,
   isPaid,
   listFoundingSessions,
   stripeGet,
@@ -39,7 +40,7 @@ module.exports = async (req, res) => {
   try {
     if (/^cs_(test|live)_[A-Za-z0-9]+$/.test(sessionId)) {
       const session = await stripeGet(`/checkout/sessions/${sessionId}`);
-      if (!session || session.payment_link !== process.env.STRIPE_PAYMENT_LINK_ID || !isPaid(session)) {
+      if (!session || !isFoundingLink(session.payment_link) || !isPaid(session)) {
         return send(res, 404, { error: 'We could not find this founding membership.' });
       }
 
